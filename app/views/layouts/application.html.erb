@@ -15,11 +15,18 @@
       <span class="title">
         MiniBlog-事前課題-
       </span>
-      <span class="menu-bar">
-        <span class="menu">投稿</span>
-        <span class="menu">ログアウト</span>
-        <span class="menu">マイページ</span>
-      </span>
+      <% if user_signed_in? %>
+        <span class="menu-bar">
+          <span class="menu"><%= link_to "投稿", new_blog_path, method: :get %></span>
+          <span class="menu"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></span>
+          <span class="menu"><%= link_to "マイページ", user_path(current_user.id), method: :get %></span>
+        </span>
+      <% else %>
+        <span class="menu-bar">
+          <span class="menu"><%= link_to "ユーザー登録", new_user_registration_path, method: :get %></span>
+          <span class="menu"><%= link_to "ログイン", new_user_session_path, method: :get %></span>
+        </span>
+      <% end %>
     </div>
     <div class="contents">
       <%= yield %>
