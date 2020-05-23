@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog2</title>
+    <title>事前課題</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <div class="header">
+      <span class="title">
+        <span>MiniBlog-事前課題-</span>
+      </span>
+      <span class="menu-bar">
+        <span class="menu">投稿</span>
+        <span class="menu">ログアウト</span>
+        <span class="menu">マイページ</span>
+      </span>
+    </div>
     <%= yield %>
+    <div class="footer">
+      <small>© 2020 ak_programing inc.</small>
+    </div>
   </body>
 </html>
