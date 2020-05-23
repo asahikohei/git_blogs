@@ -1,11 +1,16 @@
+.a {
+  text-decoration: none;
+}
+
 .header {
   background-color: #008080;
   height: 85px;
-  .title {
+  .title a {
     color: #FFFFFF;
     font-size: 2.0rem;
     line-height: 85px;
     letter-spacing: 0.1em;
+    text-decoration: none;
   }
 }
 .menu-bar {
@@ -18,6 +23,7 @@
     letter-spacing: 0.06rem;
     margin-right: 10px;
     line-height: 85px;
+    text-decoration: none;
   }
 }
 
