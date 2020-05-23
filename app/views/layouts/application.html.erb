@@ -4,7 +4,8 @@
     <title>事前課題</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,7 +13,7 @@
   <body>
     <div class="header">
       <span class="title">
-        <span>MiniBlog-事前課題-</span>
+        MiniBlog-事前課題-
       </span>
       <span class="menu-bar">
         <span class="menu">投稿</span>
@@ -20,7 +21,9 @@
         <span class="menu">マイページ</span>
       </span>
     </div>
-    <%= yield %>
+    <div class="contents">
+      <%= yield %>
+    </div>
     <div class="footer">
       <small>© 2020 ak_programing inc.</small>
     </div>
