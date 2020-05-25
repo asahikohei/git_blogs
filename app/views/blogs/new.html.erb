@@ -1,0 +1,24 @@
+<div class="post">
+  <div class="post_title">
+    <h3><%= current_user.nickname %><span>さんの投稿</span></h3>
+  </div>
+  <%= form_for(@blog) do |f| %>
+    <div class="form">
+      <%= f.text_field :title, placeholder: "タイトルを書いてね！", autofocus: "true", rows: 20, cols: 30 %>
+    </div>
+    <div class="form">
+      <%= f.text_area :text, placeholder: "投稿内容を書いてね！（必須）", autofocus: "true", style: "width: 400px; height: 400px;" %>
+    </div>
+    <div class="form">
+      <%= f.label :nickname, "ペンネーム" %>
+      <%= f.text_field :nickname, placeholder: "ペンネームを書いてね！", cols: 30, rows: 10 %>
+    </div>
+    <div class="form">
+      <%= f.label :rate, "評価" %>
+      <%= f.number_field :rate, placeholder: "評価", value: 1, max: 10, min: 1 %>
+    </div>
+    <div class="submit">
+      <%= f.submit "投稿する", class: "form_btn" %>
+    </div>
+  <% end %>
+</div>
