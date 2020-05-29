@@ -1,0 +1,12 @@
+<div class="contents">
+  <div class="contents_title">
+    <h3><%= current_user.nickname %><span>さんの投稿</span></h3>
+  </div>
+  
+  <%= render partial: "form" %>
+  
+  <div>
+    <%= link_to "トップページへ", root_path, method: :get, class: "top_page" %>
+  </div>
+  
+</div>
