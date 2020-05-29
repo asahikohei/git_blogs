@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   def index
-    @blogs = Blog.all.order('created_at DESC').page(params[:page]).per(3)
+    @blogs = Blog.all.order('created_at DESC').page(params[:page]).per(1)
   end
   
   def show
@@ -8,16 +8,28 @@ class BlogsController < ApplicationController
   end
   
   def new
-    @user = User.find(params[:id])
     @blog = Blog.new
   end
   
   def create
-    Blog.create(create_params)
+    Blog.create(blog_params)
     redirect_to :root
   end
   
+  def edit
+    @blog = Blog.find(params[:id])
+  end
+  
+  def update
+    Blog.update(blog_params)
+    redirect_to :root
+  end
+  
+  def destroy
+  end
+  
   private
-  def create_params
+  def blog_params
+    params.require(:blog).permit(:text, :nickname, :rate, :title).merge(user_id: current_user.id)
   end
 end
