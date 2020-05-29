@@ -25,6 +25,18 @@ class BlogsController < ApplicationController
     redirect_to :root
   end
   
+  def edit
+    @blog = Blog.find(params[:id])
+  end
+  
+  def update
+    Blog.update(blog_params)
+    redirect_to :root
+  end
+  
+  def destroy
+  end
+  
   private
   def blog_params
     params.require(:blog).permit(:text, :nickname, :rate, :title).merge(user_id: current_user.id)
