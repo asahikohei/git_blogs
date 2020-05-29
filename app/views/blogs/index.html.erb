@@ -1,1 +1,19 @@
-<h2>Hello World</h2>
+<div class="contents">
+  <% @blogs.each do |blog| %>
+  <div class="contents_post">
+    <div class="contents_title">
+      <%= blog.title %>
+    </div>
+    <span>投稿者：<%= blog.user.nickname %>さん</span>
+    <span>評価：<%= blog.rate %></span>
+    <div class="contents_text">
+      <%= simple_format(blog.text) %>
+    </div>
+    <% if user_signed_in? && current_user.id == blog.user_id %>
+      <span><%= link_to "編集", edit_blog_path(blog.id), method: :get, class: "contents_btn" %></span>
+      <span><%= link_to "詳細", blog_path(blog.id), method: :get, class: "contents_btn" %></span>
+    <% end %>
+  </div>
+  <% end %>
+  <span><%= paginate(@blogs) %></span>
+</div>
