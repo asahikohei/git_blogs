@@ -11,8 +11,11 @@
     </div>
     <% if user_signed_in? && current_user.id == blog.user_id %>
       <span><%= link_to "編集", edit_blog_path(blog.id), method: :get, class: "contents_btn" %></span>
+      <span><%= link_to "詳細", blog_path(blog.id), method: :get, class: "contents_btn" %></span>
     <% end %>
   </div>
   <% end %>
-  <span><%= paginate(@blogs) %></span>
+  <div class="paginate">
+    <span><%= paginate(@blogs) %></span>
+  </div>
 </div>
