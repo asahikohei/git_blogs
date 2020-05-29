@@ -21,7 +21,6 @@ class BlogsController < ApplicationController
   end
   
   def update
-    @blog = Blog.find(params[:id])
     Blog.update(blog_params)
     redirect_to :root
   end

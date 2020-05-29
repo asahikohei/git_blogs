@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_05_25_223525) do
+=======
+ActiveRecord::Schema.define(version: 2020_05_25_055606) do
+>>>>>>> 41da200a749676e6a6b7af52871aeed9e2d75940
 
   create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -20,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_05_25_223525) do
     t.integer "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "title"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -31,10 +36,13 @@ ActiveRecord::Schema.define(version: 2020_05_25_223525) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.string "birthday"
     t.text "hobby"
     t.string "food"
     t.integer "years_old"
+=======
+>>>>>>> 41da200a749676e6a6b7af52871aeed9e2d75940
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
